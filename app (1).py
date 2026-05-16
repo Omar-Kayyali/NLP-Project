@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 import numpy as np
 import re
-from keras.saving import load_model
+from tensorflow.keras.models import load_model
 from transformers import AutoTokenizer
 
 # PAGE CONFIG
@@ -39,7 +39,7 @@ if MODEL_PATH.exists():
 # this loads the model and tokenizer once and caches them for future use, improving performance
 
 def load_resources():
-    model = load_model(MODEL_PATH, compile=False)
+    model = load_model(MODEL_PATH, compile=False, safe_mode=False)
 
     tokenizer = AutoTokenizer.from_pretrained("aubmindlab/bert-base-arabertv02")
 
