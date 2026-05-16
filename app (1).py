@@ -1,4 +1,9 @@
 # Streamlit UI for Arabic Text Summarization
+import os
+os.environ["USE_TORCH"] = "0"
+os.environ["USE_TF"] = "1"
+
+
 
 import streamlit as st
 import tensorflow as tf

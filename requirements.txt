@@ -1,8 +1,7 @@
 streamlit
-tensorflow-cpu
-keras
-transformers[torch]
-torchvision
+tensorflow-cpu==2.16.1
+keras==3.3.3
+transformers==4.41.2
 sentencepiece
-numpy
+numpy<2
 h5py
