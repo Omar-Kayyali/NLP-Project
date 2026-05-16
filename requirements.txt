@@ -1,6 +1,7 @@
 streamlit
-tensorflow
+tensorflow-cpu
 keras
 transformers
 sentencepiece
 numpy
+h5py
