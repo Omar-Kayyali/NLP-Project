@@ -1,7 +1,7 @@
 streamlit
 tensorflow-cpu
 keras
-transformers
+transformers[torch]
 sentencepiece
 numpy
 h5py
