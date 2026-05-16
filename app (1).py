@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 import numpy as np
 import re
-from tensorflow.keras.models import load_model
+from keras.saving import load_model
 from transformers import AutoTokenizer
 
 # PAGE CONFIG
