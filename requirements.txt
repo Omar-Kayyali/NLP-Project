@@ -2,6 +2,7 @@ streamlit
 tensorflow-cpu
 keras
 transformers[torch]
+torchvision
 sentencepiece
 numpy
 h5py
