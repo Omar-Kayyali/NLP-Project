@@ -26,11 +26,20 @@ st.markdown("Generate summaries for Arabic articles using your trained Seq2Seq m
 
 BASE_DIR = Path(__file__).resolve().parent
 
+MODEL_PATH = BASE_DIR / "summarizer_model.keras"
+
+st.write("BASE_DIR:", BASE_DIR)
+st.write("Files:", [p.name for p in BASE_DIR.iterdir()])
+st.write("Model exists:", MODEL_PATH.exists())
+
+if MODEL_PATH.exists():
+    st.write("Model size:", MODEL_PATH.stat().st_size)
+
 @st.cache_resource
 # this loads the model and tokenizer once and caches them for future use, improving performance
 
 def load_resources():
-    model = load_model(BASE_DIR / "summarizer_model.keras", compile=False)
+    model = load_model(MODEL_PATH, compile=False)
 
     tokenizer = AutoTokenizer.from_pretrained("aubmindlab/bert-base-arabertv02")
 
