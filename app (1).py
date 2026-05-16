@@ -4,9 +4,8 @@ os.environ["USE_TORCH"] = "0"
 os.environ["USE_TF"] = "1"
 
 
-
+from pathlib import Path
 import streamlit as st
-import tensorflow as tf
 import numpy as np
 import re
 from keras.saving import load_model
@@ -24,11 +23,14 @@ st.markdown("Generate summaries for Arabic articles using your trained Seq2Seq m
 
 # LOAD MODEL & TOKENIZER
 # ------------------------------------------------------------
+
+BASE_DIR = Path(__file__).resolve().parent
+
 @st.cache_resource
 # this loads the model and tokenizer once and caches them for future use, improving performance
 
 def load_resources():
-    model = load_model("model.keras", compile=False)
+    model = load_model(BASE_DIR / "summarizer_model.keras", compile=False)
 
     tokenizer = AutoTokenizer.from_pretrained("aubmindlab/bert-base-arabertv02")
 
