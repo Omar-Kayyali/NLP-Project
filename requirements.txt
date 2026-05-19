@@ -1,7 +1,15 @@
 streamlit
 tensorflow-cpu
-keras>=3.13.0
-transformers==4.41.2
+keras
+transformers
 sentencepiece
 h5py
 numpy
+json
+pandas
+re
+string
+gc
+rouge_score
+tqdm
+matplotlib
